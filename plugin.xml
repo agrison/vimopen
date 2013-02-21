@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Sample Category"
+            id="VimOpen.commands.category">
+      </category>
+      <command
+            name="Sample Command"
+            categoryId="VimOpen.commands.category"
+            id="VimOpen.commands.sampleCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="VimOpen.commands.sampleCommand"
+            class="vimopen.handlers.VimOpenHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="VimOpen.commands.sampleCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="VimOpen.toolbars.sampleToolbar">
+            <command
+                  commandId="VimOpen.commands.sampleCommand"
+                  icon="icons/vim-tango-icon.png"
+                  tooltip="Vim that file!"
+                  id="VimOpen.toolbars.sampleCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>
